@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/png">
+    <title>RoomsPage</title>
+</head>
+<body>
+
+<div class="wrapper">
+    <header class="header">
+    <div class="container">
+        <div class="header__inner">
+            <div class="header__top">
+
+                <!--Вызов модального окна - АВТОРИЗАЦИЯ-->
+                <a class="btn-login" data-fancybox data-src="#popupAuthorization" href="javascript:;">Войти</a>
+                <!--Вызов модального окна - РЕГИСТРАЦИЯ-->
+                <!--<a class="btn-login" data-fancybox data-src="#popupRegistration" href="javascript:;">Войти</a>-->
+
+                <a class="header__logo logo" href="/">
+                    <img src="img/logo/logo.png" alt="logo">
+                </a>
+                <div class="header__slider top-slider swiper-container" id="topSlider">
+                    <div class="top-slider__wrapper swiper-wrapper">
+                        <div class="top-slider__item swiper-slide">
+                            <a class="top-slider__link" href="/">
+                                <img class="top-slider__img swiper-lazy" data-src="img/content/slider-img.jpg"
+                                     src="img/content/slider-img.jpg" alt="images">
+                            </a>
+                            <div class="swiper-lazy-preloader"></div>
+                        </div>
+                        <div class="top-slider__item swiper-slide">
+                            <a class="news__item-link" href="/">
+                                <img class="top-slider__img swiper-lazy" data-src="img/content/slider-img.jpg"
+                                     src="img/content/slider-img.jpg" alt="images">
+                            </a>
+                            <div class="swiper-lazy-preloader"></div>
+                        </div>
+                        <div class="top-slider__item swiper-slide">
+                            <a class="news__item-link" href="/">
+                                <img class="top-slider__img swiper-lazy" data-src="img/content/slider-img.jpg"
+                                     src="img/content/slider-img.jpg" alt="images">
+                            </a>
+                            <div class="swiper-lazy-preloader"></div>
+                        </div>
+                        <div class="top-slider__item swiper-slide">
+                            <a class="news__item-link" href="/">
+                                <img class="top-slider__img swiper-lazy" data-src="img/content/slider-img.jpg"
+                                     src="img/content/slider-img.jpg" alt="images">
+                            </a>
+                            <div class="swiper-lazy-preloader"></div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+            <div class="header__nav">
+                <div class="header__nav-top">
+                    <div class="header__menu">
+                        <div class="icon-menu btn-more">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <span class="header__menu_name">Меню</span>
+                    </div>
+                    <nav class="header__menu-show menu-show">
+                        <ul class="menu-show__list">
+                            <li class="menu-show__list-item">
+                                <a class="menu-show__list-link" href="/">лекции в записи</a>
+                            </li>
+                            <li class="menu-show__list-item">
+                                <a class="menu-show__list-link" href="/">лекции онлайн</a>
+                            </li>
+                            <li class="menu-show__list-item">
+                                <a class="menu-show__list-link" href="/">мастер-классы</a>
+                            </li>
+                            <li class="menu-show__list-item">
+                                <a class="menu-show__list-link" href="/">мастер-классы для школьников</a>
+                            </li>
+                            <li class="menu-show__list-item">
+                                <a class="menu-show__list-link" href="/">о проекте</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="line _header-line"></div>
+                <nav class="header__menu-hidden menu-hidden">
+                    <ul class="menu-hidden__list">
+                        <li class="menu-hidden__list-item">
+                            <a class="menu-hidden__list-link link-animate" href="/">КАБИНЕТ</a>
+                        </li>
+                        <li class="menu-hidden__list-item">
+                            <a class="menu-hidden__list-link link-animate" href="/">МОИ КОМНАТЫ</a>
+                        </li>
+                        <li class="menu-hidden__list-item">
+                            <a class="menu-hidden__list-link link-animate" href="/">НАСТРОЙКИ</a>
+                        </li>
+                        <li class="menu-hidden__list-item">
+                            <a class="menu-hidden__list-link link-animate" href="/">КАЛЕНДАРЬ</a>
+                        </li>
+                        <li class="menu-hidden__list-item">
+                            <a class="menu-hidden__list-link link-animate" href="/">ИСТОРИЯ ЗАКАЗОВ</a>
+                        </li>
+                        <li class="menu-hidden__list-item">
+                            <a class="menu-hidden__list-link link-animate" href="/">СПИСОК ЖЕЛАНИЙ</a>
+                        </li>
+                        <li class="menu-hidden__list-item">
+                            <a class="menu-hidden__list-link link-animate" href="/">КОНТАКТЫ</a>
+                        </li>
+                        <li class="menu-hidden__list-item">
+                            <a class="menu-hidden__list-link link-animate" href="/">СООБЩЕНИЯ</a>
+                        </li>
+                        <li class="menu-hidden__list-item">
+                            <a class="menu-hidden__list-link link-animate" href="/">АРХИВ</a>
+                        </li>
+                        <li class="menu-hidden__list-item">
+                            <a class="menu-hidden__list-link link-animate" href="/">КОРЗИНА</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<!--Модальное окно - АВТОРИЗАЦИЯ-->
+
+<div class="popup popup-login _authorization" id="popupAuthorization">
+    <form id="AuthorizationForm" action="/" method="post">
+        <p class="popup-login__title">АВТОРИЗАЦИЯ</p>
+        <div class="popup-login__group">
+            <input class="popup-login__input"
+                   type="text"
+                   placeholder="ВАШ ЛОГИН"
+                   id="userName"
+                   autocomplete="off">
+        </div>
+        <div class="popup-login__group">
+            <input class="popup-login__input"
+                   type="password"
+                   placeholder="ВАШ ПАРОЛЬ"
+                   id="userPassword"
+                   autocomplete="off">
+        </div>
+        <div class="checkbox-row">
+            <label class="checkbox">
+                <input class="checkbox__input"
+                       id="inputRemember"
+                       type="checkbox">
+                <span class="checkbox__style"></span>
+                <span class="checkbox__text">не запоминать меня</span>
+            </label>
+        </div>
+        <button class="popup-login__btn"
+                id="LoginFormSubmitButton"
+                type="button">ВОЙТИ
+        </button>
+        <div class="popup-login__bottom bottom-link">
+            <a class="bottom-link__restore" href="/">ЗАБЫЛИ ПАРОЛЬ?</a>
+            <a class="bottom-link__register" href="/">РЕГИСТРАЦИЯ</a>
+        </div>
+        <div class="popup-login__auth-social">
+            <p class="popup-login__auth-label">войти с помощью:</p>
+            <div class="auth-button">
+                <button class="auth-button__google" type="button">
+                    <img src="img/icons/icons.svg#google" alt="google">
+                </button>
+                <button class="auth-button__facebook" type="button">
+                    <img src="img/icons/icons.svg#facebook-login" alt="facebook">
+                </button>
+
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<!--Модальное окно - РЕГИСТРАЦИЯ-->
+
+<div class="popup popup-login _registration" id="popupRegistration">
+    <form id="RegistrationForm" action="/" method="post">
+        <p class="popup-login__title">РЕГИСТРАЦИЯ</p>
+        <div class="popup-login__group">
+            <input class="popup-login__input"
+                   type="text"
+                   placeholder="ВВЕДИТЕ ЛОГИН"
+                   id="popupLoginUsername"
+                   autocomplete="off">
+        </div>
+        <div class="popup-login__group">
+            <input class="popup-login__input"
+                   type="password"
+                   placeholder="ВВЕДИТЕ ПАРОЛЬ"
+                   id="popupLoginPassword"
+                   autocomplete="off">
+        </div>
+        <div class="popup-login__group">
+            <input class="popup-login__input"
+                   type="password"
+                   placeholder="ПОВТОРИТЕ ПАРОЛЬ"
+                   id="popupLoginPasswordRepeat"
+                   autocomplete="off">
+        </div>
+        <div class="checkbox-row">
+            <label class="checkbox">
+                <input class="checkbox__input"
+                       id="inputRememberMe"
+                       type="checkbox">
+                <span class="checkbox__style"></span>
+                <span class="checkbox__text">не запоминать меня</span>
+            </label>
+        </div>
+        <button class="popup-login__btn"
+                id="LoginFormSubmitButton"
+                type="button">ВОЙТИ
+        </button>
+        <div class="popup-login__auth-social">
+            <p class="popup-login__auth-label">войти с помощью:</p>
+            <div class="auth-button">
+                <button class="auth-button__google" type="button">
+                    <img src="img/icons/icons.svg#google" alt="google">
+                </button>
+                <button class="auth-button__facebook" type="button">
+                    <img src="img/icons/icons.svg#facebook-login" alt="facebook">
+                </button>
+
+            </div>
+        </div>
+    </form>
+</div>
+    <main class="main">
+        <div class="container">
+    <div class="main__inner">
+        <div class="cabinet-wrapper">
+            <aside class="aside-block">
+    <div class="aside-block__head cabinet">
+        <span class="cabinet__icon"></span>
+        <p class="cabinet__title">КАБИНЕТ</p>
+    </div>
+    <nav class="aside-block__menu menu-left">
+        <ul class="menu-left__list">
+            <li><a class="menu-left__item " href="/">РЕДАКТИРОВАТЬ ПРОФИЛЬ</a></li>
+            <li><a class="menu-left__item _active" href="/">МОИ КОМНАТЫ</a></li>
+            <li><a class="menu-left__item" href="/">КОНТАКТЫ</a></li>
+            <li><a class="menu-left__item" href="/">НАСТРОЙКИ</a></li>
+            <li><a class="menu-left__item " href="/">КАЛЕНДАРЬ</a></li>
+            <li><a class="menu-left__item" href="/">ИСТОРИЯ ЗАКАЗОВ</a></li>
+            <li><a class="menu-left__item" href="/">СООБЩЕНИЯ</a></li>
+            <li><a class="menu-left__item" href="/">КОРЗИНА</a></li>
+            <li><a class="menu-left__item" href="/">АРХИВ</a></li>
+        </ul>
+        <div class="menu-left__btn_close">
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+</aside>
+            <div class="right-block">
+                <div class="right-block__head">
+                    <p class="right-block__title">МОИ КОМНАТЫ</p>
+                    <a class="wish-list" href="/">
+                        <span class="wish-list__text">СПИСОК ЖЕЛАНИЙ</span>
+                        <span class="wish-list__icon"></span>
+                    </a>
+                </div>
+                <div class="right-block__body">
+                    <div class="section-list">
+                        <div class="section-list__body">
+                            <p class="subtitle">МАСТЕР-КЛАССЫ</p>
+                            <div class="section-list__wrapper master-class _three">
+                                <figure class="m-class">
+                                    <a class="m-class__link" href="/">
+                                        <img class="m-class__img"
+                                             src="img/content/item-1.jpg"
+                                             alt="images">
+                                        <span class="icon-d"></span>
+                                    </a>
+                                    <figcaption class="m-class__description">
+                                        <a class="m-class__link" href="/">
+                                            <div class="m-class__description-top">
+                                                <div class="m-class__name">Матвей Ганапольский</div>
+                                                <div class="m-class__time">
+                                                    <span class="m-class__time-date">3-13</span>
+                                                    <span class="m-class__time-month">сентября</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="m-class__description-bottom">
+                                            <span class="m-class__info-left">10 занятий</span>
+                                            <span class="m-class__info-right">мастер-класс</span>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                                <figure class="m-class">
+                                    <a class="m-class__link" href="/">
+                                        <img class="m-class__img"
+                                             src="img/content/item-4.jpg"
+                                             alt="images">
+                                        <span class="icon-d"></span>
+                                    </a>
+                                    <figcaption class="m-class__description">
+                                        <a class="m-class__link" href="/">
+                                            <div class="m-class__description-top">
+                                                <div class="m-class__name">Матвей Ганапольский</div>
+                                                <div class="m-class__time">
+                                                    <span class="m-class__time-date">3-13</span>
+                                                    <span class="m-class__time-month">сентября</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="m-class__description-bottom">
+                                            <span class="m-class__info-left">10 занятий</span>
+                                            <span class="m-class__info-right">мастер-класс</span>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                                <figure class="m-class">
+                                    <a class="m-class__link" href="/">
+                                        <img class="m-class__img"
+                                             src="img/content/item-2.jpg"
+                                             alt="images">
+                                        <span class="icon-d"></span>
+                                    </a>
+                                    <figcaption class="m-class__description">
+                                        <a class="m-class__link" href="/">
+                                            <div class="m-class__description-top">
+                                                <div class="m-class__name">Катя Осадча</div>
+                                                <div class="m-class__time">
+                                                    <span class="m-class__time-date">2-12</span>
+                                                    <span class="m-class__time-month">сентября</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="m-class__description-bottom">
+                                            <span class="m-class__info-left">10 занятий</span>
+                                            <span class="m-class__info-right">мастер-класс</span>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+
+                                <figure class="m-class">
+                                    <a class="m-class_link" href="/">
+                                        <img class="m-class__img"
+                                             src="img/content/item-3.jpg"
+                                             alt="images">
+                                        <span class="icon-d"></span>
+                                    </a>
+                                    <figcaption class="m-class__description">
+                                        <a class="m-class__link" href="/">
+                                            <div class="m-class__description-top">
+                                                <div class="m-class__name">Павел Лобков</div>
+                                                <div class="m-class__time">
+                                                    <span class="m-class__time-date">4-14</span>
+                                                    <span class="m-class__time-month">сентября</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="m-class__description-bottom">
+                                            <span class="m-class__info-left">10 занятий</span>
+                                            <span class="m-class__info-right">мастер-класс</span>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                                <figure class="m-class">
+                                    <a class="m-class__link" href="/">
+                                        <img class="m-class__img"
+                                             src="img/content/item-1.jpg"
+                                             alt="images">
+                                        <span class="icon-d"></span>
+                                    </a>
+                                    <figcaption class="m-class__description">
+                                        <a class="m-class__link" href="/">
+                                            <div class="m-class__description-top">
+                                                <div class="m-class__name">Матвей Ганапольский</div>
+                                                <div class="m-class__time">
+                                                    <span class="m-class__time-date">3-13</span>
+                                                    <span class="m-class__time-month">сентября</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="m-class__description-bottom">
+                                            <span class="m-class__info-left">10 занятий</span>
+                                            <span class="m-class__info-right">мастер-класс</span>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                                <figure class="m-class">
+                                    <a class="m-class__link" href="/">
+                                        <img class="m-class__img"
+                                             src="img/content/item-4.jpg"
+                                             alt="images">
+                                        <span class="icon-d"></span>
+                                    </a>
+                                    <figcaption class="m-class__description">
+                                        <a class="m-class__link" href="/">
+                                            <div class="m-class__description-top">
+                                                <div class="m-class__name">Матвей Ганапольский</div>
+                                                <div class="m-class__time">
+                                                    <span class="m-class__time-date">3-13</span>
+                                                    <span class="m-class__time-month">сентября</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="m-class__description-bottom">
+                                            <span class="m-class__info-left">10 занятий</span>
+                                            <span class="m-class__info-right">мастер-класс</span>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+
+                                <figure class="m-class">
+                                    <a class="m-class__link" href="/">
+                                        <img class="m-class__img"
+                                             src="img/content/item-1.jpg"
+                                             alt="images">
+                                        <span class="icon-d"></span>
+                                    </a>
+                                    <figcaption class="m-class__description">
+                                        <a class="m-class__link" href="/">
+                                            <div class="m-class__description-top">
+                                                <div class="m-class__name">Матвей Ганапольский</div>
+                                                <div class="m-class__time">
+                                                    <span class="m-class__time-date">3-13</span>
+                                                    <span class="m-class__time-month">сентября</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="m-class__description-bottom">
+                                            <span class="m-class__info-left">10 занятий</span>
+                                            <span class="m-class__info-right">мастер-класс</span>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                                <figure class="m-class">
+                                    <a class="m-class__link" href="/">
+                                        <img class="m-class__img"
+                                             src="img/content/item-4.jpg"
+                                             alt="images">
+                                        <span class="icon-d"></span>
+                                    </a>
+                                    <figcaption class="m-class__description">
+                                        <a class="m-class__link" href="/">
+                                            <div class="m-class__description-top">
+                                                <div class="m-class__name">Матвей Ганапольский</div>
+                                                <div class="m-class__time">
+                                                    <span class="m-class__time-date">3-13</span>
+                                                    <span class="m-class__time-month">сентября</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="m-class__description-bottom">
+                                            <span class="m-class__info-left">10 занятий</span>
+                                            <span class="m-class__info-right">мастер-класс</span>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-list">
+                        <div class="section-list__body">
+                            <p class="subtitle">ЛЕКЦИИ</p>
+                            <div class="section-list__wrapper lectures">
+                                <figure class="lecture">
+                                    <a class="lecture__link" href="/">
+                                        <img class="lecture__img"
+                                             src="img/content/item-1-bg.jpg"
+                                             alt="images">
+                                        <span class="icon-d"></span>
+                                    </a>
+                                    <figcaption class="lecture__description">
+                                        <div class="lecture__description-top">
+                                            <a class="lecture__link" href="/">
+                                                <div class="lecture__name">Парфенов</div>
+                                                <div class="lecture__theme">“НАМЕДНИ и ВСЕГДА”</div>
+                                            </a>
+                                            <div class="lecture__timing">
+                                                <div class="lecture__timing-item">
+                                                    <span>киев</span><span class="m-line"></span><span>10:00</span>
+                                                </div>
+                                                <div class="lecture__timing-item">
+                                                    <span>нью-йорк</span><span class="m-line"></span><span>10:00</span>
+                                                </div>
+                                                <div class="lecture__timing-item">
+                                                    <span>токио</span><span class="m-line"></span><span>10:00</span>
+                                                </div>
+                                                <div class="lecture__timing-item">
+                                                    <span>тель-авив</span><span class="m-line"></span><span>10:00</span>
+                                                </div>
+                                                <div class="lecture__timing-item">
+                                                    <span>москва</span><span class="m-line"></span><span>10:00</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="lecture__description-bottom">
+                                            <span class="lecture__info-left">2 сентября</span>
+                                            <span class="lecture__info-right">лекция</span>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                                <figure class="lecture">
+                                    <a class="lecture__link" href="/">
+                                        <img class="lecture__img"
+                                             src="img/content/item-2-bg.jpg"
+                                             alt="images">
+                                        <span class="icon-d"></span>
+                                    </a>
+                                    <figcaption class="lecture__description">
+                                        <div class="lecture__description-top">
+                                            <a class="lecture__link" href="/">
+                                                <div class="lecture__name">Нагиев</div>
+                                                <div class="lecture__theme">“ПЕРЕВЕРНИ ВЕСЬ МИР”</div>
+                                            </a>
+                                            <div class="lecture__timing">
+                                                <div class="lecture__timing-item">
+                                                    <span>киев</span><span class="m-line"></span><span>10:00</span>
+                                                </div>
+                                                <div class="lecture__timing-item">
+                                                    <span>нью-йорк</span><span class="m-line"></span><span>10:00</span>
+                                                </div>
+                                                <div class="lecture__timing-item">
+                                                    <span>токио</span><span class="m-line"></span><span>10:00</span>
+                                                </div>
+                                                <div class="lecture__timing-item">
+                                                    <span>тель-авив</span><span class="m-line"></span><span>10:00</span>
+                                                </div>
+                                                <div class="lecture__timing-item">
+                                                    <span>москва</span><span class="m-line"></span><span>10:00</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="lecture__description-bottom">
+                                            <span class="lecture__info-left">2 сентября</span>
+                                            <span class="lecture__info-right">лекция</span>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                                <figure class="lecture">
+                                    <a class="lecture__link" href="/">
+                                        <img class="lecture__img"
+                                             src="img/content/item-2-bg.jpg"
+                                             alt="images">
+                                        <span class="icon-d"></span>
+                                    </a>
+                                    <figcaption class="lecture__description">
+                                        <div class="lecture__description-top">
+                                            <a class="lecture__link" href="/">
+                                                <div class="lecture__name">Нагиев</div>
+                                                <div class="lecture__theme">“ПЕРЕВЕРНИ ВЕСЬ МИР”</div>
+                                            </a>
+                                            <div class="lecture__timing">
+                                                <div class="lecture__timing-item">
+                                                    <span>киев</span><span class="m-line"></span><span>10:00</span>
+                                                </div>
+                                                <div class="lecture__timing-item">
+                                                    <span>нью-йорк</span><span class="m-line"></span><span>10:00</span>
+                                                </div>
+                                                <div class="lecture__timing-item">
+                                                    <span>токио</span><span class="m-line"></span><span>10:00</span>
+                                                </div>
+                                                <div class="lecture__timing-item">
+                                                    <span>тель-авив</span><span class="m-line"></span><span>10:00</span>
+                                                </div>
+                                                <div class="lecture__timing-item">
+                                                    <span>москва</span><span class="m-line"></span><span>10:00</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="lecture__description-bottom">
+                                            <span class="lecture__info-left">2 сентября</span>
+                                            <span class="lecture__info-right">лекция</span>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-list">
+                        <div class="section-list__body">
+                            <p class="subtitle">МАСТЕР-КЛАССЫ ДЛЯ ШКОЛЬНИКОВ</p>
+                            <div class="section-list__wrapper master-class _three">
+                                <figure class="m-class">
+                                    <a class="m-class__link" href="/">
+                                        <img class="m-class__img"
+                                             src="img/content/item-1.jpg"
+                                             alt="images">
+                                        <span class="icon-d"></span>
+                                    </a>
+                                    <figcaption class="m-class__description">
+                                        <a class="m-class__link" href="/">
+                                            <div class="m-class__description-top">
+                                                <div class="m-class__name">Матвей Ганапольский</div>
+                                                <div class="m-class__time">
+                                                    <span class="m-class__time-date">3-13</span>
+                                                    <span class="m-class__time-month">сентября</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="m-class__description-bottom">
+                                            <span class="m-class__info-left">10 занятий</span>
+                                            <span class="m-class__info-right">мастер-класс</span>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                                <figure class="m-class">
+                                    <a class="m-class__link" href="/">
+                                        <img class="m-class__img"
+                                             src="img/content/item-4.jpg"
+                                             alt="images">
+                                        <span class="icon-d"></span>
+                                    </a>
+                                    <figcaption class="m-class__description">
+                                        <a class="m-class__link" href="/">
+                                            <div class="m-class__description-top">
+                                                <div class="m-class__name">Матвей Ганапольский</div>
+                                                <div class="m-class__time">
+                                                    <span class="m-class__time-date">3-13</span>
+                                                    <span class="m-class__time-month">сентября</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="m-class__description-bottom">
+                                            <span class="m-class__info-left">10 занятий</span>
+                                            <span class="m-class__info-right">мастер-класс</span>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                                <figure class="m-class">
+                                    <a class="m-class__link" href="/">
+                                        <img class="m-class__img"
+                                             src="img/content/item-2.jpg"
+                                             alt="images">
+                                        <span class="icon-d"></span>
+                                    </a>
+                                    <figcaption class="m-class__description">
+                                        <a class="m-class__link" href="/">
+                                            <div class="m-class__description-top">
+                                                <div class="m-class__name">Катя Осадча</div>
+                                                <div class="m-class__time">
+                                                    <span class="m-class__time-date">2-12</span>
+                                                    <span class="m-class__time-month">сентября</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="m-class__description-bottom">
+                                            <span class="m-class__info-left">10 занятий</span>
+                                            <span class="m-class__info-right">мастер-класс</span>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+
+                                <figure class="m-class">
+                                    <a class="m-class_link" href="/">
+                                        <img class="m-class__img"
+                                             src="img/content/item-3.jpg"
+                                             alt="images">
+                                        <span class="icon-d"></span>
+                                    </a>
+                                    <figcaption class="m-class__description">
+                                        <a class="m-class__link" href="/">
+                                            <div class="m-class__description-top">
+                                                <div class="m-class__name">Павел Лобков</div>
+                                                <div class="m-class__time">
+                                                    <span class="m-class__time-date">4-14</span>
+                                                    <span class="m-class__time-month">сентября</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="m-class__description-bottom">
+                                            <span class="m-class__info-left">10 занятий</span>
+                                            <span class="m-class__info-right">мастер-класс</span>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                                <figure class="m-class">
+                                    <a class="m-class__link" href="/">
+                                        <img class="m-class__img"
+                                             src="img/content/item-1.jpg"
+                                             alt="images">
+                                        <span class="icon-d"></span>
+                                    </a>
+                                    <figcaption class="m-class__description">
+                                        <a class="m-class__link" href="/">
+                                            <div class="m-class__description-top">
+                                                <div class="m-class__name">Матвей Ганапольский</div>
+                                                <div class="m-class__time">
+                                                    <span class="m-class__time-date">3-13</span>
+                                                    <span class="m-class__time-month">сентября</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="m-class__description-bottom">
+                                            <span class="m-class__info-left">10 занятий</span>
+                                            <span class="m-class__info-right">мастер-класс</span>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                                <figure class="m-class">
+                                    <a class="m-class__link" href="/">
+                                        <img class="m-class__img"
+                                             src="img/content/item-4.jpg"
+                                             alt="images">
+                                        <span class="icon-d"></span>
+                                    </a>
+                                    <figcaption class="m-class__description">
+                                        <a class="m-class__link" href="/">
+                                            <div class="m-class__description-top">
+                                                <div class="m-class__name">Матвей Ганапольский</div>
+                                                <div class="m-class__time">
+                                                    <span class="m-class__time-date">3-13</span>
+                                                    <span class="m-class__time-month">сентября</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="m-class__description-bottom">
+                                            <span class="m-class__info-left">10 занятий</span>
+                                            <span class="m-class__info-right">мастер-класс</span>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </main>
+    <footer class="footer">
+    <div class="container">
+        <div class="footer__inner">
+            <p class="footer__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate</p>
+            <a class="footer__logo logo" href="/">
+                <img src="img/logo/logo.png" alt="logo">
+            </a>
+            <div class="footer__social">
+                <a class="footer__social-link footer__social-link--youtube" href="/" target="_blank">
+                    <img src="img/icons/icons.svg#youtube" alt="youtube">
+                </a>
+                <a class="footer__social-link  footer__social-link--instagram" href="/" target="_blank">
+                    <img src="img/icons/icons.svg#instagram" alt="instagram">
+                </a>
+                <a class="footer__social-link footer__social-link--telegram" href="/" target="_blank">
+                    <img src="img/icons/icons.svg#telegram" alt="telegram">
+                </a>
+                <a class="footer__social-link footer__social-link--tiktok" href="/" target="_blank">
+                    <img src="img/icons/icons.svg#tiktok" alt="tiktok">
+                </a>
+                <a class="footer__social-link footer__social-link--facebook" href="/" target="_blank">
+                    <img src="img/icons/icons.svg#facebook" alt="facebook">
+                </a>
+                <a class="footer__social-link footer__social-link--twitter" href="/" target="_blank">
+                    <img src="img/icons/icons.svg#twitter" alt="twitter">
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+
+<script src="js/libs.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
